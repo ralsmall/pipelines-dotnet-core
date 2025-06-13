@@ -4,7 +4,45 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+- none
+parameters:
+- name: operation
+  displayName: 'Operation Type'
+  type: string
+  default: 'promote'
+  values:
+  - promote
+  - create_new
+  - destroy
+
+- name: sourceEnvironment
+  displayName: 'Source Environment (for promotion)'
+  type: string
+  default: 'dev'
+  values:
+  - dev
+  - staging
+  - prod
+
+- name: targetEnvironment
+  displayName: 'Target Environment'
+  type: string
+  default: 'staging'
+  values:
+  - dev
+  - staging
+  - prod
+  - feature-branch
+
+- name: newEnvironmentName
+  displayName: 'New Environment Name (for new environments)'
+  type: string
+  default: ''
+
+- name: resourceGroupName
+  displayName: 'Resource Group Name'
+  type: string
+  default: 'rg-myapp'
 
 pool:
   vmImage: ubuntu-latest
