@@ -21,6 +21,7 @@ parameters:
   default: 'dev'
   values:
   - dev
+  - uat
   - staging
   - prod
 
