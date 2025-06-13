@@ -30,6 +30,7 @@ parameters:
   default: 'staging'
   values:
   - dev
+  - uat
   - staging
   - prod
   - feature-branch
